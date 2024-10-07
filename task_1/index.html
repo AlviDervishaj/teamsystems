@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="Team Systems Task 1" name="title">
+    <meta content="Nuk e di ca te shkruaj" name="description" >
+    <meta content="website" property="og:type" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="./main.js" defer></script>
+
+    <link rel="stylesheet" href="./styling/index.css">
+    <link rel="stylesheet" href="./styling/skeleton.css">
+    <link rel="stylesheet" href="./styling/responsive.css">
+  </head>
+  <body>
+    <navigation-component></navigation-component>
+    <main class="main_content">
+      <img loading="lazy" src="./images/coding-bg.jpg" alt="Coding Background" class="coding_background"/>
+      <section class="cta" id="about">
+        <h1 class="header_name">Alvi Dervishaj</h1>
+        <p class="description">Junior Front-end developer. Mainly focused on React, NextJs.</p>
+        <div class="button_group">
+          <a href="#projects" class="view_work ease-in-out">
+            <p class="button_text">
+              View my Work
+            </p>
+          </a>
+          <a target="_blank" href="mailto:alvidervishaj9@gmail.com" class="reserve_meeting ease-in-out">
+            <p class="button_text">
+              Reserve a meeting
+            </p>
+          </a>
+        </div>
+      </section>
+      <section class="projects_section" id="projects">
+        <h2 class="header_name">Projects</h2>
+        <projects-component></projects-component>
+      </section>
+      <skills-component></skills-component>
+      <contact-component></contact-component>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2024 Alvi Dervishaj. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
