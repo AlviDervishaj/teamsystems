@@ -15,7 +15,7 @@ class Header extends HTMLElement {
         View my Work
       </p>
     </a>
-    <a target="_blank" href="mailto:alvidervishaj9@gmail.com" class="reserve_meeting ease-in-out">
+    <a href="./events.html" class="reserve_meeting ease-in-out">
       <p class="button_text">
         Reserve a meeting
       </p>

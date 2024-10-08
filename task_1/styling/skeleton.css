@@ -33,6 +33,7 @@
 
 a {
   scroll-behavior: smooth;
+  color: var(--slate-200);
 }
 
 html, body{
@@ -67,6 +68,7 @@ figure,
 p,
 pre {
   margin: 0;
+  color: var(--slate-200);
 }
 
 /* Unstyled lists */
@@ -105,3 +107,23 @@ dialog {
   width: 95dvw;
 
 }
+
+/* Give some room to scroll */
+#about, #projects, #skills, #contact {
+  scroll-margin-top: 100px;
+}
+
+.ease-in-out {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.truncate  {
+  display:inline-block;
+  width:180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

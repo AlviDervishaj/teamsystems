@@ -29,7 +29,7 @@ class Navigation extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
 <nav class="navigation">
-  <a href="#">
+  <a href="./index.html">
     <img loading="lazy" width="20" height="20" src="./images/alvi-logo/svg/logo-no-background.svg" class="navigation_image" alt="Alvi's Logo" />
   </a>
   <button class="navigation_toggle" onClick={handleNavigationToggle()}>
@@ -38,7 +38,7 @@ class Navigation extends HTMLElement {
   </button>
   <ul class="navigation_links">
     <li class="navigation_link ease-in-out">
-      <a href="#">Home</a>
+      <a href="./index.html">Home</a>
     </li>
     <li class="navigation_link ease-in-out">
       <a href="#about">About</a>
