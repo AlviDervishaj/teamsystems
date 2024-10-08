@@ -17,10 +17,10 @@
   --emerald-600: rgb(5 150 105);
 }
 
-:root > * {
+* {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   font-family: "Inter", sans;
 }
 
@@ -87,4 +87,21 @@ iframe,
 embed,
 object {
   display: block;
+}
+
+::backdrop {
+  background-image: linear-gradient(
+    rgba(15, 23, 42, 0.8),
+    rgba(71, 85, 105, 0.8)
+  );
+  opacity: 0.75;
+}
+dialog {
+  border: solid gray 2px;
+  border-radius: 10px;
+  background-color: var(--slate-700);
+  margin: auto;
+  padding: 1rem;
+  width: 95dvw;
+
 }

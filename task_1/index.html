@@ -9,41 +9,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <script src="./main.js" defer></script>
+    <script src="./components/Navigation.js" defer></script>
+    <script src="./components/Header.js" defer></script>
+    <script src="./components/Modal.js" defer></script>
+    <script src="./components/Projects.js" defer></script>
+    <script src="./components/Skills.js" defer></script>
+    <script src="./components/Contact.js" defer></script>
+    <script src="./components/Filters.js" defer></script>
+    <script src="./components/Carousel.js" defer></script>
+    <script src="./components/Footer.js" defer></script>
+    <link rel="stylesheet" href="./styling/skeleton.css">
 
     <link rel="stylesheet" href="./styling/index.css">
-    <link rel="stylesheet" href="./styling/skeleton.css">
     <link rel="stylesheet" href="./styling/responsive.css">
   </head>
   <body>
     <navigation-component></navigation-component>
     <main class="main_content">
-      <img loading="lazy" src="./images/coding-bg.jpg" alt="Coding Background" class="coding_background"/>
-      <section class="cta" id="about">
-        <h1 class="header_name">Alvi Dervishaj</h1>
-        <p class="description">Junior Front-end developer. Mainly focused on React, NextJs.</p>
-        <div class="button_group">
-          <a href="#projects" class="view_work ease-in-out">
-            <p class="button_text">
-              View my Work
-            </p>
-          </a>
-          <a target="_blank" href="mailto:alvidervishaj9@gmail.com" class="reserve_meeting ease-in-out">
-            <p class="button_text">
-              Reserve a meeting
-            </p>
-          </a>
-        </div>
-      </section>
+      <header-component></header-component>
       <section class="projects_section" id="projects">
         <h2 class="header_name">Projects</h2>
+        <modal-component></modal-component>
+        <filter-projects-component></filter-projects-component>
         <projects-component></projects-component>
       </section>
       <skills-component></skills-component>
       <contact-component></contact-component>
+      <carousel-component></carousel-component>
     </main>
-    <footer class="footer">
-      <p>&copy; 2024 Alvi Dervishaj. All rights reserved.</p>
-    </footer>
+    <footer-component></footer-component>
   </body>
 </html>
