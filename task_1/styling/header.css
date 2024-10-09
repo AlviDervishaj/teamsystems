@@ -15,7 +15,7 @@
   gap: 1.15rem;
   z-index: 50;
   background-color: rgba(51, 65, 85, 0.5);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
   height: 50dvh;
 }
 

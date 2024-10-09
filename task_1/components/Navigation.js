@@ -41,16 +41,16 @@ class Navigation extends HTMLElement {
       <a href="./index.html">Home</a>
     </li>
     <li class="navigation_link ease-in-out">
-      <a href="#about">About</a>
+      <a href="./index.html#about">About</a>
     </li>
     <li class="navigation_link ease-in-out">
-      <a href="#projects">Projects</a>
+      <a href="./index.html#projects">Projects</a>
     </li>
     <li class="navigation_link ease-in-out">
-      <a href="#skills">Skills</a>
+      <a href="./index.html#skills">Skills</a>
     </li>
     <li class="navigation_link ease-in-out">
-      <a href="#contact">Contact</a>
+      <a href="./index.html#contact">Contact</a>
     </li>
   </ul>
 </nav>
