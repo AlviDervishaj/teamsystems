@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.footer > p {
+  color: var(--slate-200);
+  font-size: 1.2rem;
+}

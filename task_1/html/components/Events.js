@@ -173,7 +173,8 @@ class Events extends HTMLElement {
     super();
   }
   connectedCallback() {
-    let elements = events.map((event) => `<section class="event" data-eventId="${event.id}">
+    let elements = events.map((event) => `
+<section class="event" data-eventId="${event.id}">
     <div class="event_date_and_day">
       <h1 class="day">${mapIndexToWeekday(dayjs(event.date).day())}</h1>
       <p class="date">${dayjs(event.date).format("DD")}</p>
@@ -218,7 +219,8 @@ class Events extends HTMLElement {
       </ul>
     </div>
       ${elements.join(" ")}
-    </div> `;
+    </div>
+    `;
   }
 }
 

@@ -1,0 +1,36 @@
+.projects_section {
+  padding: 2rem 0;
+}
+.main_content{
+  background-color: transparent;
+  position: relative;
+}
+
+
+.header_name {
+  font-size: 3rem;
+  color: var(--slate-100);
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* MD */
+@media screen and (min-width: 768px) {
+  .header_name {
+    font-size: 3.5rem;
+  }
+}
+
+
+
+/* LG */
+@media screen and (min-width: 1024px) {
+  .header_name {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
