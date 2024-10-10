@@ -1,12 +1,24 @@
 import { events as _events } from "../../utils/events";
 import dayjs from "dayjs";
 import Notify from 'simple-notify';
-import styles from "./index.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Filters } from "../Filters";
-export const Events = () => {
-  const [events, setEvents] = useState(_events);
+import styles from "./index.module.css";
+import 'simple-notify/dist/simple-notify.css'
 
+export const Events = () => {
+  const [events, setEvents] = useState(localStorage && localStorage.getItem("events") ? JSON.parse(localStorage.getItem("events")) : _events);
+  const [searchTitle, setSearchTitle] = useState("");
+
+  useEffect(() => {
+    function presistEventsState() {
+      localStorage.setItem("events", JSON.stringify(events));
+    }
+    window.addEventListener("beforeunload", presistEventsState)
+    return () => {
+      window.removeEventListener("beforeunload", presistEventsState)
+    }
+  }, [events]);
 
   function mapIndexToWeekday(index) {
     switch (index) {
@@ -50,55 +62,86 @@ export const Events = () => {
     })
   };
 
-  function deleteEvent(event) {
-    setEvents((prev) => prev.filter((e) => e.id !== event.id ? e : null).sort());
+  function markAsCompleted(event) {
+    event.completed = true;
+    const results = events.filter((predicate) => predicate.id === event.id ? event : predicate);
+    setEvents(results);
     showNotification("Event sucessfully deleted.");
-    // save to localStorage
-    localStorage.setItem("events", JSON.stringify(events));
+
+  }
+
+  function deleteEvent(event) {
+    const results = events.filter((predicate) => predicate.id !== event.id);
+    setEvents(results);
+    showNotification("Event sucessfully deleted.");
   }
 
   function sortByDefault() {
     setEvents(_events);
+    showNotification("Sorted by default.");
   }
 
   function sortByDate() {
     const results = events.toSorted((event, predicate) => (dayjs(event.date).isAfter(dayjs(predicate.date)) ? 1 : -1));
-    localStorage.setItem("events", JSON.stringify(results));
+    setEvents(results);
     showNotification("Sorted By Date.");
   }
 
+  function sortByText(event) {
+    const title = event.currentTarget.value;
+    setSearchTitle(title);
+    if (title.trim("") === "" || !title) {
+      setEvents(_events);
+      return;
+    }
+    const results = events.filter((predicate) => predicate.title === title || predicate.title.startsWith(title) || predicate.title.includes(title));
+    setEvents(results);
+    return;
+  }
+
   const filterItems = [
-    { title: "Default", handleItemClick: sortByDefault },
-    { title: "Date", handleItemClick: sortByDate },
+    { title: "Default", handleItemEvent: () => sortByDefault() },
+    { title: "Date", handleItemEvent: () => sortByDate() },
   ];
 
   return (
-    <div>
-      <Filters items={filterItems}/>
+    <div className={styles.events}>
+      <Filters items={filterItems} />
+      <input type="text" alt="Search by title" placeholder="Search by title..." className={styles.input} value={searchTitle} onChange={sortByText} />
       {
         events.map((event) => (
-          <section className={styles.event} key={event.id}>
-            <div className={styles.event_date_and_day}>
-              <h1 className={styles.day}>{mapIndexToWeekday(dayjs(event.date).day())}</h1>
-              <p className={styles.date}>{dayjs(event.date).format("DD")}</p>
-            </div>
-            <section className={styles.event_place_time}>
-              <div className={styles.event_start}>
-                <img src="/images/clock.png" width="16" height="16" alt="Clock" />
-                <p>{event.startHour}</p>
-              </div>
-              <div className={styles.event_place}>
-                <img src="/images/location.png" width="20" height="20" alt="Location" />
-                <p>{event.location}</p>
-              </div>
-            </section>
-            <p className={styles.event_title}>
-              {event.title}
-            </p>
-            <button className={styles.delete_button} onClick={() => deleteEvent(event)}>
-              <img src="/images/delete.png" width="20" height="20" alt="Delete" />
-            </button>
-          </section>
+          <div key={event.id}>
+            {
+              event.completed ? null :
+                <section className={styles.event}>
+                  <div className={styles.event_date_and_day}>
+                    <h1 className={styles.day}>{mapIndexToWeekday(dayjs(event.date).day())}</h1>
+                    <p className={styles.date}>{dayjs(event.date).format("DD")}</p>
+                  </div>
+                  <section className={styles.event_place_time}>
+                    <div className={styles.event_start}>
+                      <img src="/images/clock.png" width="16" height="16" alt="Clock" />
+                      <p>{event.startHour}</p>
+                    </div>
+                    <div className={styles.event_place}>
+                      <img src="/images/location.png" width="20" height="20" alt="Location" />
+                      <p>{event.location}</p>
+                    </div>
+                  </section>
+                  <p className={styles.event_title}>
+                    {event.title}
+                  </p>
+                  <div className={styles.button_group}>
+                    <button className={styles.delete_button} onClick={() => deleteEvent(event)}>
+                      <img src="/images/delete.png" width="20" height="20" alt="Delete" />
+                    </button>
+                    <button className={styles.markAsCompleted} onClick={() => markAsCompleted(event)}>
+                      <img src="/images/check.png" width="25" height="25" alt="Check" />
+                    </button>
+                  </div>
+                </section>
+            }
+          </div>
         ))
       }
     </div>

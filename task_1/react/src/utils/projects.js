@@ -38,7 +38,7 @@ export const projects = [
     description: "Kjo repo eshte nje config i Arch Linux, Tmux, Neovim, Picom, Rofi, Polybar, Starship, Lazygit, i3, wezterm dhe alacritty per te maksimizuar produktivitetin e nje developer-i.",
     imageUrl: "/images/nice-blue-background.png",
     repo: "https://github.com/AlviDervishaj/config",
-    categories: ["termial"],
+    categories: ["terminal"],
   },
   {
     id: 5,

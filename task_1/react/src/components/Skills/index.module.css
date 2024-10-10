@@ -16,12 +16,12 @@
   align-items: center;
 }
 
-.languages > li > p {
+.skillTitle {
   font-size: 1rem;
   letter-spacing: 0.025em;
   color: var(--slate-200);
 }
-.languages > li {
+.skill {
   width: 100%;
   max-width: 20rem;
 }
@@ -54,6 +54,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .skillTitle {
+    font-size: 1.25rem;
+  }
   .header_name {
     font-size: 3rem;
   }
@@ -61,8 +64,13 @@
 
 /* LG */
 @media screen and (min-width: 1024px) {
-
   .header_name {
     font-size: 3.5rem;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .skillTitle {
+    font-size: 1.5rem;
   }
 }

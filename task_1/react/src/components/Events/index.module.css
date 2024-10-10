@@ -1,0 +1,210 @@
+.events {
+  width: 100dvw;
+  height: fit-content;
+  min-height: 40dvh;
+  padding: 1rem 1rem 10rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1rem;
+}
+
+.input {
+  padding: 0.75rem;
+  border-radius: 10px;
+  border-width: 1px;
+  width: 80dvw;
+  line-height: 1.25;
+  color: var(--slate-900);
+  background-color: var(--slate-300);
+  appearance: none;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.event {
+  width: 80dvw;
+  height: 10dvh;
+  min-height: 10dvh;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  background-color: var(--slate-300);
+  border-radius: 10px;
+}
+.button_group {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.event_date_and_day {
+  height: 100%;
+  padding: 0.2rem;
+  display: flex;
+  min-width: 3rem;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: var(--slate-400);
+}
+
+.day {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.date {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.event_place_time {
+  width: 8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0.5rem;
+  padding-left: 0.3rem;
+}
+.event_start {
+  padding-left: 0.2rem;
+}
+.event_place, .event_start {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.event_place {
+  gap: 0.2rem;
+}
+
+.event_start {
+  gap: 0.4rem;
+}
+.event_start > p {
+  font-size: 0.8rem;
+  color: var(--slate-700);
+}
+.event_place > p{
+  font-size: 0.7rem;
+  max-width: 160px;
+  color: var(--slate-700);
+}
+
+.event_title {
+  width: 90%;
+  height: 100%;
+  padding-top: 0.3rem;
+  font-size: 0.8rem;
+  text-align: left;
+  text-decoration: none;
+  color: var(--slate-900);
+}
+
+.delete_button, .markAsCompleted {
+  width: 3rem;
+  height: 50%;
+  background-color: transparent;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.delete_button > img, .markAsCompleted > img {
+  aspect-ratio: 1 / 1;
+}
+
+.delete_button:hover, .delete_button:focus, .markAsCompleted:hover, .markAsCompleted:focus {
+  background-color: rgba(51, 65, 85, 0.4);
+}
+
+
+@media screen and (min-width: 1024px) {
+  .event {
+    width: 50dvw;
+  }
+
+  .event_date_and_day {
+    width: 7rem;
+  }
+
+  .day {
+    font-size: 1.3rem;
+  }
+
+  .date {
+    font-size: 2rem;
+  }
+
+  .event_start > img {
+    width: 20px;
+    height: 20px;
+  }
+  .event_place > img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .event_start > p, .event_place > p {
+    font-size: 1.2rem;
+  }
+  .event_place > p {
+    font-size: 0.95rem;
+  }
+
+  .event_title {
+    font-size: 1.2rem;
+  }
+
+  .delete_button > img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .events {
+    padding-bottom: 12rem;
+  }
+  .input {
+    width: 60dvw;
+  }
+
+}
+
+@media screen and (min-width: 1536px) {
+  .event {
+    height: 13dvh;
+  }
+
+  .event_place_time {
+    width: 12dvw;
+  }
+  .input {
+    width: 30dvw;
+  }
+}
+

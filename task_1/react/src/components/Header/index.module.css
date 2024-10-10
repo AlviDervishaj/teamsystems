@@ -39,7 +39,7 @@
   font-size: 0.9rem;
   color: var(--slate-100);
   letter-spacing: 0.1em;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -94,7 +94,7 @@
 /* LG */
 @media screen and (min-width: 1024px) {
   .header_name {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
 
   .cta {
@@ -102,7 +102,7 @@
   }
 
   .description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .reserve_meeting, .view_work {
@@ -113,4 +113,15 @@
     font-size: 1rem;
     color: var(--slate-900);
   }
+}
+
+@media screen and (min-width: 1536px) {
+  .header_name {
+    font-size: 6rem;
+  }
+
+  .description {
+    font-size: 2rem;
+  }
+
 }

@@ -33,7 +33,7 @@ export const Navigation = () => {
         </ul>
       </nav>
       {isOpened ? (
-      <div id="openMe" className="ease-in-out">
+      <div id="openMe" className={`${styles.openMe} ease-in-out`}>
         <ul>
           <li className={`${styles.navigation_link} ease-in-out`}>
             <a href="#">Home</a>
