@@ -1,3 +1,6 @@
 [submodule "week_2"]
 	path = week_2
 	url = https://github.com/AlviDervishaj/teamsystems_week_2
+[submodule "week_3_project"]
+	path = week_3_project
+	url = https://github.com/AlviDervishaj/teamsystem_week_3_project
