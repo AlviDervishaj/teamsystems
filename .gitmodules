@@ -1,0 +1,9 @@
+[submodule "week_3_project"]
+	path = week_3_project
+	url = https://github.com/AlviDervishaj/teamsystem_week_3_project/
+[submodule "week_4_pre_nx"]
+	path = week_4_pre_nx
+	url = https://github.com/AlviDervishaj/teamsystems_week_4/
+[submodule "week_4"]
+	path = week_4
+	url = https://github.com/AlviDervishaj/teamsystems_week_4_nx
